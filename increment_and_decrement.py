@@ -1,4 +1,4 @@
-# Input a number from the user
+# Increment the number by 5 and then decrement the number by 3
 number = int(input("Enter a number: "))
 
 incremented_number = number + 5
