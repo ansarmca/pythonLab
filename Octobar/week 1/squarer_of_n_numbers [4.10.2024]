@@ -1,5 +1,4 @@
 limit = int(input("Enter the limit of Numbers: "))
 for i in range(limit):
     number = int(input("Enter the  Numbers: "))
-    square_root = number ** 0.5
-    print("square root of ",number," is ",square_root)
+    print(number ** 2)
