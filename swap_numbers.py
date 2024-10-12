@@ -1,10 +1,9 @@
-x = int(input("Enter first Number: "))
-y = int(input("Enter second Number: "))
-
-print ("Before swapping: ")
-print("Value of x : ", x, " and y : ", y)
-
-x, y = y, x
-
-print ("After swapping: ")
-print("Value of x : ", x, " and y : ", y)
+number_1 = int(input("Enter first no : "))
+number_2 = int(input("Enter second no : "))
+print("Before Swapping ")
+print("A = ",number_1," B = ",number_2)
+number_1 = number_1 + number_2
+number_2 = number_1 - number_2
+number_1 = number_1 - number_2
+print("After Swapping")
+print("A = ",number_1," B = ",number_2)
