@@ -1,7 +1,13 @@
-sample_list = []
+# Create an empty list
+user_list = []
 
-additional_list = [1, 2, 3, "ansar", 3.14, True]
+# Get the number of elements from the user
+num_elements = int(input("How many elements do you want to add? "))
 
-sample_list.extend(additional_list)
+# Use a loop to input each element
+for i in range(num_elements):
+    element = input(f"Enter element {i+1}: ")
+    user_list.append(element)
 
-print(sample_list)
+# Print the final list
+print("The list is:", user_list)
