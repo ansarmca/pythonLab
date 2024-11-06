@@ -20,7 +20,7 @@ def create_even_list(numbers):
             even_numbers.append(num)
     print("Even numbers:", even_numbers)
 
-def menu_driven():
+def main():
     n = int(input("Enter the number of elements: "))
     numbers = []
     for i in range(n):
@@ -28,6 +28,7 @@ def menu_driven():
         numbers.append(num)
 
     while True:
+        print("\nMenu:")
         print("1. Find greatest and lowest numbers")
         print("2. Sort list in ascending order")
         print("3. Create a list of even numbers")
@@ -45,4 +46,4 @@ def menu_driven():
         else:
             print("Invalid choice. Please try again.")
 
-menu_driven()
+main()
