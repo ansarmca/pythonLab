@@ -17,7 +17,6 @@ roll_number = int(input("Enter roll number: "))
 register_number = input("Enter register number: ")
 department = input("Enter department: ")
 semester = int(input("Enter semester: "))
-total_marks = int(input("Enter total marks: "))
 
 student_details = {
     'name': name,
@@ -25,14 +24,17 @@ student_details = {
     'register_number': register_number,
     'department': department,
     'semester': semester,
-    'total_marks': total_marks
 }
+print("Entered student details:", student_details)
+
+total_marks = int(input("Enter total marks: "))
+student_details['total_marks'] = total_marks
 
 grade = calculate_grade(total_marks)
-
 student_details['grade'] = grade
 
-# Delete the roll_number
+print("\nUpdated student details : ",student_details)
+
 del student_details['roll_number']
 
-print(student_details)
+print("\nStudent details after rollno deletion: ",student_details)
