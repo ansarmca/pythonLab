@@ -18,6 +18,7 @@ register_number = input("Enter register number: ")
 department = input("Enter department: ")
 semester = int(input("Enter semester: "))
 total_marks = int(input("Enter total marks: "))
+
 student_details = {
     'name': name,
     'roll_number': roll_number,
@@ -30,5 +31,8 @@ student_details = {
 grade = calculate_grade(total_marks)
 
 student_details['grade'] = grade
+
+# Delete the roll_number
+del student_details['roll_number']
 
 print(student_details)
