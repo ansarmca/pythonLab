@@ -1,40 +1,42 @@
-def calculate_grade(total_marks):
-    if total_marks >= 90:
-        return 'A'
-    elif total_marks >= 82:
-        return 'B'
-    elif total_marks >= 75:
-        return 'C'
-    elif total_marks >= 60:
-        return 'D'
-    elif total_marks >= 50:
-        return 'P'
-    else:
-        return 'F'
+def find_greatest_and_lowest(numbers):
+    print("Greatest number:", max(numbers))
+    print("Lowest number:", min(numbers))
 
-name = input("Enter student's name: ")
-roll_number = int(input("Enter roll number: "))
-register_number = input("Enter register number: ")
-department = input("Enter department: ")
-semester = int(input("Enter semester: "))
+def sort_ascending(numbers):
+    numbers.sort()
+    print("Sorted list:", numbers)
 
-student_details = {
-    'name': name,
-    'roll_number': roll_number,
-    'register_number': register_number,
-    'department': department,
-    'semester': semester,
-}
-print("Entered student details:", student_details)
+def create_even_list(numbers):
+    even_numbers = []
+    for num in numbers:
+        if num % 2 == 0:
+            even_numbers.append(num)
+    print("Even numbers:", even_numbers)
 
-total_marks = int(input("Enter total marks: "))
-student_details['total_marks'] = total_marks
+def main():
+    n = int(input("Enter the number of elements: "))
+    numbers = []
+    for i in range(n):
+        num = int(input("Enter number {}: ".format(i+1)))
+        numbers.append(num)
 
-grade = calculate_grade(total_marks)
-student_details['grade'] = grade
+    while True:
+        print("\nMenu:")
+        print("1. Find greatest and lowest numbers")
+        print("2. Sort list in ascending order")
+        print("3. Create a list of even numbers")
+        print("4. Exit")
+        choice = int(input("Enter your choice: "))
 
-print("\nUpdated student details : ",student_details)
+        if choice == 1:
+            find_greatest_and_lowest(numbers)
+        elif choice == 2:
+            sort_ascending(numbers)
+        elif choice == 3:
+            create_even_list(numbers)
+        elif choice == 4:
+            break
+        else:
+            print("Invalid choice. Please try again.")
 
-del student_details['roll_number']
-
-print("\nStudent details after rollno deletion: ",student_details)
+main()
