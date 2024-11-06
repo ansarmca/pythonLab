@@ -1,13 +1,6 @@
 def find_greatest_and_lowest(numbers):
-    greatest = numbers[0]
-    lowest = numbers[0]
-    for num in numbers:
-        if num > greatest:
-            greatest = num
-        if num < lowest:
-            lowest = num
-    print("Greatest number:", greatest)
-    print("Lowest number:", lowest)
+    print("Greatest number:", max(numbers))
+    print("Lowest number:", min(numbers))
 
 def sort_ascending(numbers):
     numbers.sort()
