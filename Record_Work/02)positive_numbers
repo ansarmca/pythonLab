@@ -1,10 +1,11 @@
-def get_positive_numbers(numbers):
-  positive_numbers = []
-  for number in numbers:
-    if number > 0:
-      positive_numbers.append(number)
-  return positive_numbers
+def get_positive_numbers():
+    numbers_str = input("Enter numbers separated by spaces: ")
+    numbers = [int(num) for num in numbers_str.split()]
+    positive_numbers = []
+    for number in numbers:
+        if number > 0:
+            positive_numbers.append(number)
+    return positive_numbers
 
-numbers = [1, -2, 3, -4, 5, 0]
-positive_list = get_positive_numbers(numbers)
+positive_list = get_positive_numbers()
 print(positive_list)
