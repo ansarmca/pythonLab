@@ -17,8 +17,8 @@ def check_common_values(list1, list2):
     return common if common else None
 
 def main():
-    list1 = list(map(int, input("Enter the integers for List 1, separated by spaces: ").split()))
-    list2 = list(map(int, input("Enter the integers for List 2, separated by spaces: ").split()))
+    list1 = list(map(int, input("Enter the integers for List 1 separated by spaces: ").split()))
+    list2 = list(map(int, input("Enter the integers for List 2 separated by spaces: ").split()))
 
     while True:
         choice = menu()
@@ -45,6 +45,4 @@ def main():
                 break
             case _:
                 print("Invalid choice. Please try again.")
-
-if __name__ == "__main__":
-    main()
+main()
