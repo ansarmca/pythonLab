@@ -1,0 +1,55 @@
+def enter_lists():
+    list1 = [int(x) for x in input("Enter elements of list 1: ").split()]
+    list2 = [int(x) for x in input("Enter elements of list 2: ").split()]
+    return list1, list2
+
+def check_length(list1, list2):
+    if len(list1) == len(list2):
+        print("Lists are of the same length.")
+    else:
+        print("Lists are not of the same length.")
+
+def check_sum(list1, list2):
+    if sum(list1) == sum(list2):
+        print("Lists sum to the same value.")
+    else:
+        print("Lists do not sum to the same value.")
+
+def check_common_values(list1, list2):
+    common_values = set(list1).intersection(set(list2))
+    if common_values:
+        print("Common values in both lists:", common_values)
+    else:
+        print("No common values found.")
+
+def main():
+    list1, list2 = [], []
+
+    while True:
+        print("\nMenu:")
+        print("1. Enter two lists of integers")
+        print("2. Check if lists are of same length")
+        print("3. Check if lists sum to the same value")
+        print("4. Check for common values in both lists")
+        print("5. Exit")
+
+        choice = int(input("Enter your choice: "))
+
+        choice_map = {
+            1: enter_lists,
+            2: check_length,
+            3: check_sum,
+            4: check_common_values,
+            5: exit
+        }
+
+        if choice in choice_map:
+            if choice == 1:
+                list1, list2 = choice_map[choice]()
+            else:
+                choice_map[choice](list1, list2)
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
