@@ -1,0 +1,32 @@
+import math
+
+# Function to check if all digits are even
+def all_digits_even(num):
+    for digit in str(num):
+        if int(digit) % 2 != 0:  # Check if the digit is not even
+            return False
+    return True
+
+# Function to generate the required numbers
+def generate_numbers(start, end):
+    result = []
+    for i in range(math.isqrt(start), math.isqrt(end) + 1):  # Iterate over possible square roots
+        square = i ** 2
+        if square >= start and square <= end and all_digits_even(square):
+            result.append(square)
+    return result
+
+# User input for the range
+start = int(input("Enter the starting number of the range: "))
+end = int(input("Enter the ending number of the range: "))
+
+# Validate input
+if start < 1000 or end > 9999 or start > end:
+    print("Please enter a valid range for four-digit numbers (1000 to 9999).")
+else:
+    # Generate and display the result
+    numbers = generate_numbers(start, end)
+    if numbers:
+        print("Numbers with all even digits and are perfect squares:", numbers)
+    else:
+        print("No numbers found in the given range.")
