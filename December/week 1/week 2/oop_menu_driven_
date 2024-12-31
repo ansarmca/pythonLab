@@ -1,0 +1,41 @@
+class StringOperations:
+    def __init__(self, input_string=""):
+        self.input_string = input_string
+
+    def set_string(self, input_string):
+        self.input_string = input_string
+
+    def is_palindrome(self):
+        return self.input_string == self.input_string[::-1]
+
+    def count_vowels(self):
+        vowels = "aeiouAEIOU"
+        return sum(1 for char in self.input_string if char in vowels)
+
+    def reverse_string(self):
+        return self.input_string[::-1]
+
+    def menu(self):
+        while True:
+            print("\nMenu:")
+            print("1. Check if the string is a palindrome")
+            print("2. Count vowels in the string")
+            print("3. Reverse the string")
+            print("4. Exit")
+
+            choice = int(input("Enter your choice: "))
+
+            if choice == 1:
+                print(f"Is palindrome: {self.is_palindrome()}")
+            elif choice == 2:
+                print(f"Number of vowels: {self.count_vowels()}")
+            elif choice == 3:
+                print(f"Reversed string: {self.reverse_string()}")
+            elif choice == 4:
+                print("Exiting the program.")
+                break
+            else:
+                print("Invalid choice. Please try again.")
+
+input_string = input("Enter a string: ")
+StringOperations(input_string).menu()
