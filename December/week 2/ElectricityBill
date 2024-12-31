@@ -1,0 +1,57 @@
+class ElectricityBill:
+    def __init__(self, name, account_number, address, units_consumed):
+        self.name = name
+        self.account_number = account_number
+        self.address = address
+        self.units_consumed = units_consumed
+        self.bill_amount = 0
+
+    # Method to calculate bill based on units consumed
+    def calculate_bill(self):
+        if self.units_consumed <= 100:
+            self.bill_amount = self.units_consumed * 1.5
+        elif self.units_consumed <= 300:
+            self.bill_amount = (100 * 1.5) + (self.units_consumed - 100) * 2.5
+        else:
+            self.bill_amount = (100 * 1.5) + (200 * 2.5) + (self.units_consumed - 300) * 4
+        return self.bill_amount
+
+    # Method to display the bill details
+    def display_details(self):
+        details = {
+            "Name": self.name,
+            "Account Number": self.account_number,
+            "Address": self.address,
+            "Units Consumed": self.units_consumed,
+            "Bill Amount": self.bill_amount,
+        }
+        return details
+
+# Main Program
+def main():
+    # Input details
+    name = input("Enter customer's name: ")
+    account_number = input("Enter account number: ")
+    address = input("Enter address: ")
+    units_consumed = int(input("Enter units consumed: "))
+
+    # Create an object of ElectricityBill
+    customer = ElectricityBill(name, account_number, address, units_consumed)
+
+    # Calculate bill
+    bill_amount = customer.calculate_bill()
+
+    # Display details
+    print("\nCustomer Electricity Bill Details:")
+    details = customer.display_details()
+    for key, value in details.items():
+        print(f"{key}: {value}")
+
+    # Deleting account number for privacy
+    del details["Account Number"]
+    print("\nDetails after account number deletion:")
+    for key, value in details.items():
+        print(f"{key}: {value}")
+
+if __name__ == "__main__":
+    main()
