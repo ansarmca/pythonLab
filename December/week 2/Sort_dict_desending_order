@@ -1,0 +1,18 @@
+from collections import OrderedDict
+
+# Input dictionary from the user
+students = {}
+n = int(input("Enter the number of students: "))
+
+for _ in range(n):
+    name = input("Enter the student's name: ")
+    marks = int(input(f"Enter marks for {name}: "))
+    students[name] = marks
+
+# Sort the dictionary by keys (student names) in descending order
+sorted_students = OrderedDict(sorted(students.items(), reverse=True))
+
+# Display the sorted dictionary
+print("\nDictionary sorted in descending order of names:")
+for name, marks in sorted_students.items():
+    print(f"{name}: {marks}")
