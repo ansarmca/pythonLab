@@ -1,0 +1,14 @@
+# Lambda function to calculate area of a rectangle
+area_rectangle = lambda length, width: length * width
+
+# Lambda function to calculate area of a circle
+# π (pi) is approximately 3.14159
+area_circle = lambda radius: 3.14159 * radius ** 2
+
+# Lambda function to calculate area of a square
+area_square = lambda side: side ** 2
+
+# Test the functions
+print("Area of Rectangle (length=5, width=3):", area_rectangle(5, 3))
+print("Area of Circle (radius=4):", area_circle(4))
+print("Area of Square (side=4):", area_square(4))
