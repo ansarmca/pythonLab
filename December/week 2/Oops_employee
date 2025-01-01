@@ -1,0 +1,42 @@
+class Employee:
+    def __init__(self, name, designation, salary):
+        self.name = name
+        self.designation = designation
+        self.salary = salary
+
+    def update_salary(self, new_salary):
+        self.salary = new_salary
+        print(f"Salary of {self.name} has been updated to {self.salary}.")
+
+    def show_details(self):
+        print(f"Employee Details:\nName: {self.name}\nDesignation: {self.designation}\nSalary: {self.salary}")
+
+    def calculate_annual_income(self):
+        annual_income = self.salary * 12
+        print(f"Annual Income of {self.name}: {annual_income}")
+        return annual_income
+
+
+# Create 3 employee objects
+emp1 = Employee("Alice", "Manager", 50000)
+emp2 = Employee("Bob", "Developer", 40000)
+emp3 = Employee("Charlie", "Analyst", 35000)
+
+# Run all methods on each object
+print("=== Employee 1 ===")
+emp1.show_details()
+emp1.calculate_annual_income()
+emp1.update_salary(55000)
+emp1.show_details()
+
+print("\n=== Employee 2 ===")
+emp2.show_details()
+emp2.calculate_annual_income()
+emp2.update_salary(45000)
+emp2.show_details()
+
+print("\n=== Employee 3 ===")
+emp3.show_details()
+emp3.calculate_annual_income()
+emp3.update_salary(38000)
+emp3.show_details()
