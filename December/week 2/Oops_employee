@@ -3,40 +3,40 @@ class Employee:
         self.name = name
         self.designation = designation
         self.salary = salary
-
+    
     def update_salary(self, new_salary):
         self.salary = new_salary
-        print(f"Salary of {self.name} has been updated to {self.salary}.")
-
-    def show_details(self):
-        print(f"Employee Details:\nName: {self.name}\nDesignation: {self.designation}\nSalary: {self.salary}")
-
+        print(f"Salary updated to {self.salary}")
+    
+    def display_details(self):
+        print(f"Name: {self.name}")
+        print(f"Designation: {self.designation}")
+        print(f"Salary: {self.salary}")
+    
     def calculate_annual_income(self):
         annual_income = self.salary * 12
-        print(f"Annual Income of {self.name}: {annual_income}")
+        print(f"Annual Income: {annual_income}")
         return annual_income
 
+# Create instances for three employees
+employee1 = Employee("Alice", "Manager", 50000)
+employee2 = Employee("Bob", "Developer", 40000)
+employee3 = Employee("Charlie", "Designer", 35000)
 
-# Create 3 employee objects
-emp1 = Employee("Alice", "Manager", 50000)
-emp2 = Employee("Bob", "Developer", 40000)
-emp3 = Employee("Charlie", "Analyst", 35000)
+# Display details for each employee
+print("Employee 1 Details:")
+employee1.display_details()
+employee1.calculate_annual_income()
 
-# Run all methods on each object
-print("=== Employee 1 ===")
-emp1.show_details()
-emp1.calculate_annual_income()
-emp1.update_salary(55000)
-emp1.show_details()
+print("\nEmployee 2 Details:")
+employee2.display_details()
+employee2.calculate_annual_income()
 
-print("\n=== Employee 2 ===")
-emp2.show_details()
-emp2.calculate_annual_income()
-emp2.update_salary(45000)
-emp2.show_details()
+print("\nEmployee 3 Details:")
+employee3.display_details()
+employee3.calculate_annual_income()
 
-print("\n=== Employee 3 ===")
-emp3.show_details()
-emp3.calculate_annual_income()
-emp3.update_salary(38000)
-emp3.show_details()
+# Update salary for one employee and display details
+print("\nUpdating salary for Employee 2:")
+employee2.update_salary(45000)
+employee2.display_details()
