@@ -1,41 +1,47 @@
 class StringOperations:
-    def __init__(self, input_string=""):
-        self.input_string = input_string
-
-    def set_string(self, input_string):
-        self.input_string = input_string
+    def __init__(self, input_string):
+        self.input_string = input_string.lower()  # Convert string to lowercase for consistent processing
 
     def is_palindrome(self):
+        """Check if the string is a palindrome."""
         return self.input_string == self.input_string[::-1]
 
     def count_vowels(self):
-        vowels = "aeiouAEIOU"
+        """Count the number of vowels in the string."""
+        vowels = 'aeiou'
         return sum(1 for char in self.input_string if char in vowels)
 
     def reverse_string(self):
+        """Reverse the string."""
         return self.input_string[::-1]
 
-    def menu(self):
-        while True:
-            print("\nMenu:")
-            print("1. Check if the string is a palindrome")
-            print("2. Count vowels in the string")
-            print("3. Reverse the string")
-            print("4. Exit")
+def main():
+    while True:
+        print("\nMenu:")
+        print("a. Check Palindrome")
+        print("b. Count Vowels")
+        print("c. Reverse String")
+        print("d. Exit")
+        choice = input("Enter your choice: ").strip().lower()
 
-            choice = int(input("Enter your choice: "))
+        if choice == 'd':
+            print("Exiting the program. Goodbye!")
+            break
+        elif choice in ['a', 'b', 'c']:
+            input_string = input("Enter a string: ").strip()
+            string_ops = StringOperations(input_string)
 
-            if choice == 1:
-                print(f"Is palindrome: {self.is_palindrome()}")
-            elif choice == 2:
-                print(f"Number of vowels: {self.count_vowels()}")
-            elif choice == 3:
-                print(f"Reversed string: {self.reverse_string()}")
-            elif choice == 4:
-                print("Exiting the program.")
-                break
-            else:
-                print("Invalid choice. Please try again.")
-
-input_string = input("Enter a string: ")
-StringOperations(input_string).menu()
+            if choice == 'a':
+                if string_ops.is_palindrome():
+                    print(f"'{input_string}' is a palindrome.")
+                else:
+                    print(f"'{input_string}' is not a palindrome.")
+            elif choice == 'b':
+                vowel_count = string_ops.count_vowels()
+                print(f"'{input_string}' contains {vowel_count} vowels.")
+            elif choice == 'c':
+                reversed_string = string_ops.reverse_string()
+                print(f"The reverse of '{input_string}' is '{reversed_string}'.")
+        else:
+            print("Invalid choice. Please try again.")
+main()
