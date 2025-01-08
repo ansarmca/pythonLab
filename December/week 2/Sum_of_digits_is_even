@@ -1,9 +1,11 @@
-# Function to calculate the sum of digits of a number
-def sum_of_digits(num):
-    return sum(int(digit) for digit in str(num))
+def is_sum_of_digits_even(number):
+    digit_sum = sum(int(digit) for digit in str(number))
+    return digit_sum % 2 == 0
 
-# Loop through numbers from 100 to 200
-print("Numbers from 100 to 200 with an even sum of digits:")
-for number in range(100, 201):
-    if sum_of_digits(number) % 2 == 0:
-        print(number, end=" ")
+def main():
+    print("Integers within the range 100-200 whose sum of digits is an even number:")
+    for num in range(100, 201):
+        if is_sum_of_digits_even(num):
+            print(num, end=" ")
+
+main()
