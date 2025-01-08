@@ -1,0 +1,8 @@
+def longest_word_length(words):
+    if not words:  # Check if the list is empty
+        return 0
+    return max(len(word) for word in words)
+
+# Example usage:
+words_list = ["apple", "banana", "cherry", "watermelon"]
+print("Length of the longest word:", longest_word_length(words_list))
