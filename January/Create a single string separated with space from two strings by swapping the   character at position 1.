@@ -1,0 +1,17 @@
+def swap_and_combine(str1, str2):
+    if len(str1) > 1 and len(str2) > 1:
+        # Swap the second character of the strings
+        new_str1 = str1[0] + str2[1] + str1[2:]
+        new_str2 = str2[0] + str1[1] + str2[2:]
+        # Combine them with a space
+        return new_str1 + " " + new_str2
+    else:
+        return "Both strings must have at least two characters."
+
+def main():
+    str1 = input("Enter the first string: ")
+    str2 = input("Enter the second string: ")
+    result = swap_and_combine(str1, str2)
+    print("Result:", result)
+
+main()
