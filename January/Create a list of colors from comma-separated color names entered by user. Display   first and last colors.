@@ -1,0 +1,17 @@
+def main():
+    # Input: comma-separated color names
+    colors = input("Enter comma-separated color names: ").split(',')
+    
+    # Removing leading and trailing spaces from each color
+    colors = [color.strip() for color in colors]
+
+    # Displaying the first and last colors
+    if colors:
+        print(f"First color: {colors[0]}")
+        print(f"Last color: {colors[-1]}")
+    else:
+        print("No colors entered.")
+
+
+
+  main()
