@@ -1,0 +1,13 @@
+def find_biggest(a, b, c):
+    return max(a, b, c)
+
+def main():
+    print("Enter three numbers:")
+    num1 = float(input("First number: "))
+    num2 = float(input("Second number: "))
+    num3 = float(input("Third number: "))
+
+    biggest = find_biggest(num1, num2, num3)
+    print(f"The biggest number is: {biggest}")
+
+main()
