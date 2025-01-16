@@ -1,0 +1,17 @@
+def find_unique_colors(color_list1, color_list2):
+    return [color for color in color_list1 if color not in color_list2]
+
+def main():
+    # Input: comma-separated color lists
+    color_list1 = input("Enter comma-separated colors for list1: ").split(',')
+    color_list2 = input("Enter comma-separated colors for list2: ").split(',')
+
+    # Removing leading and trailing spaces from each color
+    color_list1 = [color.strip() for color in color_list1]
+    color_list2 = [color.strip() for color in color_list2]
+
+    # Find and print unique colors
+    unique_colors = find_unique_colors(color_list1, color_list2)
+    print("Colors in color-list1 not in color-list2:", unique_colors)
+
+main()
