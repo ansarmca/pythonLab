@@ -1,0 +1,11 @@
+def compute_expression(n):
+    nn = int(str(n) * 2)  # Creates 'nn'
+    nnn = int(str(n) * 3)  # Creates 'nnn'
+    return n + nn + nnn
+
+def main():
+    n = int(input("Enter an integer (n): "))
+    result = compute_expression(n)
+    print(f"Result of n + nn + nnn is: {result}")
+
+main()
