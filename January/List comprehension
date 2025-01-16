@@ -1,0 +1,49 @@
+def generate_positive_numbers(lst):
+    return [num for num in lst if num > 0]
+
+def square_of_numbers(n):
+    return [i**2 for i in range(1, n+1)]
+
+def form_vowel_list(word):
+    vowels = "aeiouAEIOU"
+    return [letter for letter in word if letter in vowels]
+
+def list_ordinal_values(word):
+    return [ord(letter) for letter in word]
+
+def main():
+    while True:
+        print("\nMenu:")
+        print("1. Generate positive list of numbers from a given list")
+        print("2. Square of N numbers")
+        print("3. Form a list of vowels selected from a given word")
+        print("4. List ordinal value of each element of a word")
+        print("5. Exit")
+
+        choice = int(input("Enter your choice: "))
+
+        if choice == 1:
+            lst = list(map(int, input("Enter a list of integers separated by space: ").split()))
+            print("Positive numbers:", generate_positive_numbers(lst))
+
+        elif choice == 2:
+            n = int(input("Enter the value of N: "))
+            print("Squares of first", n, "numbers:", square_of_numbers(n))
+
+        elif choice == 3:
+            word = input("Enter a word: ")
+            print("Vowels in the word:", form_vowel_list(word))
+
+        elif choice == 4:
+            word = input("Enter a word: ")
+            print("Ordinal values of each character:", list_ordinal_values(word))
+
+        elif choice == 5:
+            print("Exiting...")
+            break
+
+        else:
+            print("Invalid choice, please try again.")
+
+
+main()
