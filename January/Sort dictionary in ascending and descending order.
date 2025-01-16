@@ -1,0 +1,24 @@
+def sort_dictionary(dictionary):
+    # Sort dictionary in ascending order
+    ascending = dict(sorted(dictionary.items()))
+
+    # Sort dictionary in descending order
+    descending = dict(sorted(dictionary.items(), reverse=True))
+
+    return ascending, descending
+
+def main():
+    # Input: dictionary from the user
+    n = int(input("Enter the number of items in the dictionary: "))
+    dictionary = {}
+    for _ in range(n):
+        key = input("Enter key: ")
+        value = input("Enter value: ")
+        dictionary[key] = value
+
+    ascending, descending = sort_dictionary(dictionary)
+
+    print("\nSorted Dictionary in Ascending Order:", ascending)
+    print("Sorted Dictionary in Descending Order:", descending)
+
+main()
