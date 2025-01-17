@@ -1,0 +1,70 @@
+class Book:
+    def __init__(self, title, author, isbn):
+        self.title = title
+        self.author = author
+        self.isbn = isbn
+
+    def display_info(self):
+        print(f"Title: {self.title}, Author: {self.author}, ISBN: {self.isbn}")
+
+    def update_author(self, new_author):
+        self.author = new_author
+
+
+class Library:
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, book, copies):
+        self.books.append({"book": book, "copies": copies})
+
+    def lend_book(self, title):
+        for book_entry in self.books:
+            if book_entry["book"].title == title:
+                if book_entry["copies"] > 0:
+                    book_entry["copies"] -= 1
+                    print(f"{title} has been lent. Remaining copies: {book_entry['copies']}")
+                    return
+                else:
+                    print(f"{title} is out of stock!")
+                    return
+        print(f"{title} not found in the library.")
+
+    def display_books(self):
+        print("Available Books:")
+        for book_entry in self.books:
+            book_entry["book"].display_info()
+            print(f"Copies: {book_entry['copies']}")
+
+
+def main():
+    # Create Book objects
+    book1 = Book("Python Programming", "John Doe", "123456789")
+    book2 = Book("Data Science Essentials", "Jane Smith", "987654321")
+
+    # Update the author of book1
+    book1.update_author("Johnathan Doe")
+
+    # Display book information
+    book1.display_info()
+    book2.display_info()
+
+    # Create Library object
+    library = Library()
+
+    # Add books to the library
+    library.add_book(book1, 3)
+    library.add_book(book2, 5)
+
+    # Display available books
+    library.display_books()
+
+    # Lend a book
+    library.lend_book("Python Programming")
+    library.lend_book("Python Programming")
+    library.lend_book("Python Programming")
+    library.lend_book("Python Programming")  # Out of stock test
+
+    # Display available books after lending
+    library.display_books()
+main()
