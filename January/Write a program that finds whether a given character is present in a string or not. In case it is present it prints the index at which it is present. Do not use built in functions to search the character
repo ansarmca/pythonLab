@@ -1,0 +1,16 @@
+def find_all_indices(string, char):
+    indices = []
+    for index in range(len(string)):
+        if string[index] == char:
+            indices.append(index)
+    return indices
+
+string = input("Enter a string: ")
+char = input("Enter the character to search for: ")
+
+indices = find_all_indices(string, char)
+
+if indices:
+    print(f"The character '{char}' is present at indices: {indices}")
+else:
+    print(f"The character '{char}' is not present in the string.")
