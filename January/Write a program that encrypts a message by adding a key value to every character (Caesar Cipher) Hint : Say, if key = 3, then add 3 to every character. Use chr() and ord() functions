@@ -1,0 +1,26 @@
+def caesar_cipher_encrypt(message, key):
+    encrypted_message = ""
+    for char in message:
+        if char.isalpha():
+            if char.islower():
+                encrypted_message += chr((ord(char) - ord('a') + key) % 26 + ord('a'))
+            elif char.isupper():
+                encrypted_message += chr((ord(char) - ord('A') + key) % 26 + ord('A'))
+        else:
+            encrypted_message += char
+    return encrypted_message
+
+message = input("Enter the message to encrypt: ")
+key = int(input("Enter the key value (an integer): "))
+
+encrypted_message = caesar_cipher_encrypt(message, key)
+
+print("Encrypted message:", encrypted_message)
+
+
+
+#output
+
+Enter the message to encrypt: hello ansar
+Enter the key value (an integer): 3
+Encrypted message: khoor dqvdu
